@@ -1,0 +1,11 @@
+# ---- Append to build-openstlinuxweston-stm32mp13-mx/conf/local.conf ----
+# Uses ST's generic CubeMX machine (MACHINE=stm32mp13-mx) so the ST EULA symlink already exists.
+
+CUBEMX_PROJECT       = "mx/oddesey"
+CUBEMX_PROJECT_NAME  = "oddesey"
+CUBEMX_DTB           = "stm32mp135d-oddesey-mx"
+CUBEMX_BOARD_DDR_SIZE = "512"
+
+# stm32mp13-mx.conf leaves these empty (?=), so set them here
+BOOTSCHEME_LABELS = "optee"
+BOOTDEVICE_LABELS = "sdcard"

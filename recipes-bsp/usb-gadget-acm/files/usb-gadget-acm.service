@@ -1,0 +1,14 @@
+[Unit]
+Description=USB serial console gadget (CDC-ACM) on the USB-C port
+After=systemd-modules-load.service sys-kernel-config.mount
+Wants=sys-kernel-config.mount
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/usb-gadget-acm.sh
+# Start the login prompt only after /dev/ttyGS0 exists
+ExecStartPost=/bin/systemctl --no-block start serial-getty@ttyGS0.service
+
+[Install]
+WantedBy=multi-user.target

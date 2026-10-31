@@ -1,0 +1,12 @@
+[Unit]
+Description=nRF93M1 LTE PPP link
+BindsTo=dev-nrf93m1.device
+After=dev-nrf93m1.device
+
+[Service]
+ExecStart=/usr/sbin/pppd call nrf93m1 nodetach
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+[Unit]
+Description=Ethernet-first internet with LTE fallback
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/netfailover.sh
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

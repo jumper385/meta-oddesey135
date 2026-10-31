@@ -1,0 +1,16 @@
+/dev/nrf93m1
+115200
+unit 0
+ipparam nrf93m1
+local
+lock
+noauth
+noipdefault
+usepeerdns
+nodefaultroute
+persist
+maxfail 0
+holdoff 10
+lcp-echo-interval 30
+lcp-echo-failure 4
+connect "/usr/sbin/chat -v -f /etc/chatscripts/nrf93m1"

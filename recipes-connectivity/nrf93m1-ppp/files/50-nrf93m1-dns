@@ -1,0 +1,4 @@
+#!/bin/sh
+# Save the DNS servers from the modem. netfailover uses them.
+[ "$PPP_IPPARAM" = nrf93m1 ] || exit 0
+echo "$DNS1 $DNS2" > /run/nrf93m1.dns

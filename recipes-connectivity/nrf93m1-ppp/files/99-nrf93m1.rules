@@ -1,0 +1,2 @@
+SUBSYSTEM=="tty", KERNEL=="ttyACM[0-9]*", IMPORT{builtin}="usb_id"
+SUBSYSTEM=="tty", KERNEL=="ttyACM[0-9]*", ENV{ID_VENDOR_ID}=="1366", ENV{ID_USB_INTERFACE_NUM}=="02", SYMLINK+="nrf93m1", TAG+="systemd", ENV{SYSTEMD_WANTS}+="nrf93m1-ppp.service"
